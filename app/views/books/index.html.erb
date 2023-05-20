@@ -1,0 +1,41 @@
+<main>
+  <div class="container px-5 px-sm-0">
+    <div class="raw">
+      <div class="col-md-3">
+        <h2>User info</h2>
+        <%= form_with model: User do |f| %>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>name</th>
+              <th><%= %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= %></th>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+      </div>
+    </div>
+    <div class="raw">
+      <%= form_with model: Book.new do |f| %>
+        <h2>New book</h2>
+        <label>Title</label>
+        <div class="form-group">
+          <%= f.text_field :title %>
+        </div>
+          <label>Opinion</label>
+        <div class="form-group">
+          <%= f.text_area :body %>
+        </div>
+        <div class="form-group">
+          <%= f.submit :"Create Book" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
+
+
